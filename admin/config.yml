@@ -1,44 +1,15 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: test-repo
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  - name: "authors"
-    label: "Autori"
-    folder: "authors"
-    create: true
-    slug: "{{slug}}"
-    extension: "yml"
-    format: "yaml"
-    fields:
-      - { label: "Nome completo", name: "name", widget: "string" }
-      - { label: "Ruolo", name: "role", widget: "string" }
-      - { label: "Avatar (URL immagine)", name: "avatar", widget: "string" }
-      - { label: "Area", name: "area", widget: "string" }
-      - { label: "Email", name: "email", widget: "string" }
-      - { label: "Indirizzo", name: "address", widget: "string" }
-
-  - name: "pages"
-    label: "Pagine"
-    folder: "pages"
+  - name: "test"
+    label: "Test"
+    folder: "content/test"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
-      - { label: "Layout", name: "layout", widget: "string", default: "page" }
-      - { label: "Corpo della pagina", name: "body", widget: "markdown" }
-
-  - name: "posts"
-    label: "Post"
-    folder: "posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Titolo", name: "title", widget: "string" }
-      - { label: "Data di pubblicazione", name: "date", widget: "datetime" }
-      - { label: "Autore", name: "author", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "name" }
-      - { label: "Immagine di copertura", name: "cover_image", widget: "image" }
-      - { label: "Corpo del post", name: "body", widget: "markdown" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
