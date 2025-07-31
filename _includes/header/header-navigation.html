@@ -13,8 +13,8 @@ tutte le pagine del sito che:
         <div class="col-12">
           <div class="it-header-center-content-wrapper">
             <div class="it-brand-wrapper">
-              <a href="#">
-                <img class="icon" src="{{ site.baseurl }}{{ site.data.t.icon }}" alt="{{ site.name }} logo">
+              <a href="/gabrieljones/">
+                  <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" class="icon" width="40" height="40">
                 <div class="it-brand-text">
                   <h2 class="no_toc">{{ site.data.t.name[page.lang] }}</h2>
                   <h3 class="no_toc d-none d-md-block">{{ site.data.t.description[page.lang] }}</h3>
@@ -71,11 +71,22 @@ tutte le pagine del sito che:
               </div>
               <div class="menu-wrapper">
                 <ul class="navbar-nav">
-                  {% for menu_page in current_lang_menu_pages %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}{{menu_page.permalink}}"><span>{{menu_page.title}}</span></a>
+                    <a class="nav-link" href="/"><span>home</span></a>
                   </li>
-                  {% endfor %}
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/authors/"><span>Authors</span></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/arenagiovani/"><span>Arena Giovani</span></a>
+                  </li>
+
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/onlygabbyme/"><span>OnlyGabbyMe</span></a>
+                  </li>
                 </ul>
               </div>
             </div>
