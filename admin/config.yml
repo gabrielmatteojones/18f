@@ -22,6 +22,7 @@ collections:
       - { label: "Area", name: "area", widget: "string" }
       - { label: "Email", name: "email", widget: "string" }
       - { label: "Indirizzo", name: "address", widget: "string" }
+      - { label: "Permalink personalizzato", name: "permalink", widget: "string", hint: "Scrivi l'URL che vuoi usare, es: /chi-siamo/" }
   - name: "pages"
     label: "Pagine"
     folder: "pages"
@@ -31,6 +32,7 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Permalink personalizzato", name: "permalink", widget: "string", hint: "Scrivi l'URL che vuoi usare, es: /chi-siamo/" }
       - { label: "Immagine", name: "image", widget: "image" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
       - { label: "Contenuto", name: "body", widget: "markdown" }
