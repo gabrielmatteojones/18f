@@ -9,9 +9,54 @@ layout: page
     {{ content }}
   </div>
 
-  <div class="date">
-    Scritto il {{ page.date | date: "%d/%m/%Y" }}
-  </div>
+<div id="author-card" class="col-12 col-md-6 col-lg-6 mb-3 mb-md-4" data-author="{{ page.author }}">
+  <!-- La card verrà riempita da JS -->
+</div>
 
-  {% include disqus.html %}
+<script src="/assets/js/authors.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("author-card");
+    const authorKey = container.getAttribute("data-author");
+
+    if (authorKey && authorsData[authorKey]) {
+      const author = authorsData[authorKey];
+      container.innerHTML = `
+        <article class="it-card it-card-profile it-card-height-full it-card-border-top it-card-border-top-secondary rounded shadow-sm border">
+          <div class="it-card-profile-header">
+            <div class="it-card-profile">
+              <h4 class="it-card-profile-name">
+                <a href="#">${author.name}</a>
+              </h4>
+              <p class="it-card-profile-role">${author.role}</p>
+            </div>
+            <div class="avatar size-xl">
+              <img src="${author.avatar}" alt="${author.name}">
+            </div>
+          </div>
+          <div class="it-card-body">
+            <dl class="it-card-description-list">
+              <div>
+                <dt>Area:</dt>
+                <dd><a class="it-card-link" href="#">${author.area}</a></dd>
+              </div>
+              <div>
+                <dt>Email:</dt>
+                <dd>${author.email}</dd>
+              </div>
+              <div>
+                <dt>Indirizzo:</dt>
+                <dd>${author.address}</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      `;
+    } else {
+      container.innerHTML = "<p>Autore non trovato.</p>";
+    }
+  });
+</script>
+
+</div>
 </article>
