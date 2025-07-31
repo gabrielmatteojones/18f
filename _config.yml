@@ -52,8 +52,6 @@ exclude:
   - Gemfile.lock
   - AUTHORS
   - LICENSE
-  - README.md
-  - CNAME
 
 title: "Il mio Blog di Gabriel Jones"
 description: "Blog personale di Gabriel Jones su [argomenti]"
