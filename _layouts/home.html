@@ -66,6 +66,7 @@ layout: default
 
 <div class="row g-4">
   {% for post in site.posts offset:1 limit:4 %}
+  <a href="{{ site.posts.first.url | relative_url }}">
     <div class="col-md-6">
       <div class="card shadow-sm h-100">
         {% if post.image %}
@@ -80,6 +81,7 @@ layout: default
         </div>
       </div>
     </div>
+    </a>
   {% endfor %}
 </div>
 
