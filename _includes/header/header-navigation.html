@@ -14,7 +14,9 @@ tutte le pagine del sito che:
           <div class="it-header-center-content-wrapper">
             <div class="it-brand-wrapper">
               <a href="#">
-                <img class="icon" src="{{ site.baseurl }}{{ site.data.t.icon }}" alt="{{ site.name }} logo">
+<svg width="82" height="82" class="icon" aria-hidden="true">       
+     <image xlink:href="https://www.comune.fontanafredda.pn.it/wp-content/uploads/2024/09/Stemma-Fontanafredda.png" width="82" height="82"></image>    
+</svg>
                 <div class="it-brand-text">
                   <h2 class="no_toc">{{ site.data.t.name[page.lang] }}</h2>
                   <h3 class="no_toc d-none d-md-block">{{ site.data.t.description[page.lang] }}</h3>
@@ -37,17 +39,6 @@ tutte le pagine del sito che:
                   {% endfor %}
                 </ul>
               </div>
-              {% comment %}
-              <!-- Search button -->
-              <div class="it-search-wrapper">
-                <span class="d-none d-md-block">Cerca</span>
-                <a class="search-link rounded-icon" href="#" aria-label="Cerca">
-                  <svg class="icon">
-                    <use xlink:href="{{ site.baseurl }}/assets/bootstrap-italia/dist/svg/sprite.svg#it-search"></use>
-                  </svg>
-                </a>
-              </div>
-              {% endcomment %}
             </div>
           </div>
         </div>
@@ -71,11 +62,9 @@ tutte le pagine del sito che:
               </div>
               <div class="menu-wrapper">
                 <ul class="navbar-nav">
-                  {% for menu_page in current_lang_menu_pages %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}{{menu_page.permalink}}"><span>{{menu_page.title}}</span></a>
+                    <a class="nav-link" href="{{ site.baseurl }}/home"><span></span></a>
                   </li>
-                  {% endfor %}
                 </ul>
               </div>
             </div>
