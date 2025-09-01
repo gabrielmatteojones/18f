@@ -53,14 +53,14 @@ exclude:
   - AUTHORS
   - LICENSE
 
-title: "Il mio Blog di Gabriel Jones"
-description: "Blog personale di Gabriel Jones su [argomenti]"
-keywords: "blog, tecnologia, lifestyle, viaggi"
+title: "18F"
+description: "Il sito generale di 18F, Gabriel Jones"
+keywords: "Sviluppo, amministrazione, distretti 18F"
 author: "Gabriel Jones"
 language: "it"
 og_image: "/assets/logo.png"
-canonical_url: "https://blog.gabrieljones.it/gabrieljones/"
-rss_feed_url: "https://blog.gabrieljones.it/gabrieljones/feed"
+canonical_url: "https://18f.it/"
+rss_feed_url: "https://18f.it/feed"
 
 collections:
   articoli:
