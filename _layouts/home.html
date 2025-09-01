@@ -10,21 +10,28 @@ layout: default
       <div class="col-lg-6 order-2 order-lg-1">
         <div class="card mb-5">
           <div class="card-body pb-5 px-0">
+
             <div class="category-top">
               <svg class="icon icon-sm" aria-hidden="true">
                 <use xlink:href="{{ '/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar' | relative_url }}"></use>
               </svg>
-              <span class="title-xsmall-semi-bold fw-semibold">Notizie</span>
-              <span class="data fw-normal">{{ site.posts.first.date | date: "%-d %b %Y" }}</span>
+              <span class="title-xsmall-semi-bold fw-semibold">
+                {% if site.posts.first.categories %}
+                  {{ site.posts.first.categories[0] }}
+                {% else %}
+                  Notizie
+                {% endif %}
+              </span>
+              <span class="data fw-normal">
+                {{ site.posts.first.date | date: "%-d %b %Y" }}
+              </span>
             </div>
 
-            <a href="{{ site.posts.first.url | relative_url }}" class="text-decoration-none">
-              <h3 class="card-title">{{ site.posts.first.title }}</h3>
-            </a>
+            <h3 class="card-title">{{ site.posts.first.title }}</h3>
 
-            <p class="mb-4 pt-3 lora">
-              {{ site.posts.first.excerpt }}
-            </p>
+            <div class="mb-4 pt-3 lora">
+              {{ site.posts.first.content }}
+            </div>
 
             {% if site.posts.first.tags %}
               <a class="chip chip-simple" href="{{ '/tags/' | append: site.posts.first.tags[0] | relative_url }}">
@@ -33,7 +40,7 @@ layout: default
             {% endif %}
 
             <a class="read-more pb-3" href="{{ site.posts.first.url | relative_url }}">
-              <span class="text">Tutte le novità</span>
+              <span class="text">Leggi sul sito</span>
               <svg class="icon">
                 <use xlink:href="{{ '/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right' | relative_url }}"></use>
               </svg>
@@ -46,12 +53,14 @@ layout: default
         {% if site.posts.first.image %}
           <img src="{{ site.posts.first.image }}" title="{{ site.posts.first.title }}" alt="{{ site.posts.first.title }}" class="img-fluid">
         {% else %}
-          <img src="https://picsum.photos/800/600" title="titolo immagine" alt="descrizione immagine" class="img-fluid">
+          <img src="https://picsum.photos/800/600" title="Immagine di default" alt="Immagine di esempio" class="img-fluid">
         {% endif %}
       </div>
     </div>
   </div>
 </section>
+
+
 
 <section id="calendario">
   <div class="section section-muted pb-90 pb-lg-50 px-lg-5 pt-0">
@@ -60,32 +69,32 @@ layout: default
         <div class="card-wrapper px-0 card-overlapping card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
 
           {% for post in site.posts offset:1 limit:3 %}
-            <div class="card card-teaser card-flex no-after rounded shadow-sm border border-light mb-0">
+            <div class="card card-teaser card-flex no-after rounded shadow-sm border border-light mb-4">
               <div class="card-body pb-5">
+
                 <div class="category-top">
                   {% if post.categories %}
                     <span class="title-xsmall-semi-bold fw-semibold">{{ post.categories[0] }}</span>
                   {% else %}
                     <span class="title-xsmall-semi-bold fw-semibold">Notizie</span>
                   {% endif %}
+                  <span class="data fw-normal">{{ post.date | date: "%-d %b %Y" }}</span>
                 </div>
 
                 <h3 class="card-title text-paragraph-medium u-grey-light">
-                  <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+                  {{ post.title }}
                 </h3>
 
-                <p class="text-paragraph-card u-grey-light m-0">
-                  {{ post.excerpt }}
-                </p>
+                <div class="text-paragraph-card u-grey-light m-0">
+                  {{ post.content }}
+                </div>
               </div>
 
-              <div class="card-image-wrapper with-read-more">
-                {% if post.image %}
-                  <div class="card-image card-image-rounded pb-5">
-                    <img src="{{ post.image }}" alt="{{ post.title }}">
-                  </div>
-                {% endif %}
-              </div>
+              {% if post.image %}
+                <div class="card-image card-image-rounded pb-3">
+                  <img src="{{ post.image }}" alt="{{ post.title }}">
+                </div>
+              {% endif %}
 
               <a class="read-more ps-3" href="{{ post.url | relative_url }}">
                 <span class="text">Vai alla pagina</span>
@@ -101,6 +110,7 @@ layout: default
     </div>
   </div>
 </section>
+
 
 
 
