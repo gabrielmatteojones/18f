@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ciao mondo!
+title: Esempio 1
 lang: it
 ref: hello-world
 categories: [categoria1]
